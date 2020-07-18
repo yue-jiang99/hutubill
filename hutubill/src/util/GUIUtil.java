@@ -113,10 +113,36 @@ public class GUIUtil {
      */
     public static void useLNF(){
         try {
-            UIManager.setLookAndFeel("com.birosoft.liquid.LiquidLookAndFeel");
+            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 显示画版类
+     * @param p
+     * @param strech 组件拉伸比 1表示满屏
+     */
+    public static void showPanel(JPanel p,double strech){
+        GUIUtil.useLNF();
+        JFrame f = new JFrame();
+        f.setSize(500,500);
+        f.setLocationRelativeTo(null);
+        CenterPanel cp = new CenterPanel(strech);
+        f.setContentPane(cp);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+        cp.show(p);
+
+    }
+
+    /**
+     * 默认为0.85的拉伸比例
+     * @param b
+     */
+    public static void showPanel(JPanel b){
+        showPanel(b,0.85);
     }
 
 }
