@@ -1,17 +1,21 @@
 package util;
 
+
+
+import gui.panel.WorkingPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * å±…ä¸­é¢æ¿
+ * ¾ÓÖĞÃæ°å
  */
 public class CenterPanel extends JPanel {
-    //æ‹‰ä¼¸æ¯”ä¾‹
+    //À­Éì±ÈÀı
     private double rate;
-    //æ˜¾ç¤ºçš„ç»„ä»¶
+    //ÏÔÊ¾µÄ×é¼ş
     private JComponent c;
-    //æ˜¯å¦æ‹‰ä¼¸
+    //ÊÇ·ñÀ­Éì
     private boolean strech;
 
     public CenterPanel(double rate, boolean strech) {
@@ -20,7 +24,7 @@ public class CenterPanel extends JPanel {
         this.strech = strech;
     }
 
-    //streché»˜è®¤ä¸ºtrue
+    //strechÄ¬ÈÏÎªtrue
     public CenterPanel(double rate) {
         this(rate,true);
     }
@@ -42,7 +46,7 @@ public class CenterPanel extends JPanel {
     }
 
     /**
-     * æ˜¾ç¤ºé¢ç‰ˆ
+     * ÏÔÊ¾Ãæ°æ
      * @param p
      */
     public void show(JComponent p ){
@@ -51,9 +55,9 @@ public class CenterPanel extends JPanel {
         for (Component c : cs ){
             remove(c);
         }
-//        if (p instanceof WorkinhPanel){
-//
-//        }
+       if (p instanceof WorkingPanel){
+
+        }
         add(p);
         this.updateUI();
 

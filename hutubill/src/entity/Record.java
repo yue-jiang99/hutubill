@@ -1,6 +1,6 @@
 package entity;
 
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 /**
  * 消费记录类
@@ -10,37 +10,37 @@ public class Record {
 
     private int id;             //主键
     private int spend;          //消费金额
-    private int cif;            //分类id
+    private int cid;            //分类id
     private String comment;     //消费备注
-    private Data data;          //日期
+    private Date date;          //日期
 
     @Override
     public String toString() {
         return "Category{" +
                 "id=" + id +
                 ", spend=" + spend +
-                ", cif=" + cif +
+                ", cif=" + cid +
                 ", comment='" + comment + '\'' +
-                ", data=" + data +
+                ", data=" + date +
                 '}';
     }
 
-    public Record(int id, int spend, int cif, String comment, Data data) {
+    public Record(int id, int spend, int cid, String comment, Date data) {
         this.id = id;
         this.spend = spend;
-        this.cif = cif;
+        this.cid = cid;
         this.comment = comment;
-        this.data = data;
+        this.date = data;
     }
 
     public Record() {
     }
 
-    public Record(int spend, int cif, String comment, Data data) {
+    public Record(int spend, int cid, String comment, Date data) {
         this.spend = spend;
-        this.cif = cif;
+        this.cid = cid;
         this.comment = comment;
-        this.data = data;
+        this.date = data;
     }
 
     public int getId() {
@@ -59,12 +59,12 @@ public class Record {
         this.spend = spend;
     }
 
-    public int getCif() {
-        return cif;
+    public int getCid() {
+        return cid;
     }
 
-    public void setCif(int cif) {
-        this.cif = cif;
+    public void setCid(int cid) {
+        this.cid = cid;
     }
 
     public String getComment() {
@@ -75,11 +75,11 @@ public class Record {
         this.comment = comment;
     }
 
-    public Data getData() {
-        return data;
+    public Date getDate() {
+        return date;
     }
 
-    public void setData(Data data) {
-        this.data = data;
+    public void setDate(Date data) {
+        this.date = data;
     }
 }

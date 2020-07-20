@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
-    <file url="file://$PROJECT_DIR$/bin" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/img/img" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/backup.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/category1.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/category2.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/config.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/home.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/record.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/report.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/img/restore.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/lib" charset="GBK" />
     <file url="file://$PROJECT_DIR$/lib/chart.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/lib/liquidlnf.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/frame/MainFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/panel/BackupPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/panel/CategroyPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/panel/ConfigPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/panel/MainPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/panel/RecordPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/panel/RecoverPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/panel/SpendPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/CenterPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/util/ChartUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/CircleProgressBar.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/ColorUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/DateUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/GUIUtil.java" charset="UTF-8" />
   </component>
 </project>

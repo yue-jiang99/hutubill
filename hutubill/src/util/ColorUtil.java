@@ -6,12 +6,12 @@ import java.awt.*;
 public class ColorUtil {
 
     /**
-     *é¢œè‰²
+     *ÑÕÉ«
      */
-    public static Color blueColor = Color.decode("#3399FF");           //blueColor æ·¡è“è‰²
-    public static Color grayColor = Color.decode("#999999");           //grayColor ç°è‰²
-    public static Color warningColor = Color.decode("#FF3333");        //warningColor è­¦å‘Šçº¢è‰²
-    public static Color backgroundColor = Color.decode("#eeeeee");     //backgroundColor èƒŒæ™¯è‰²
+    public static Color blueColor = Color.decode("#3399FF");           //blueColor µ­À¶É«
+    public static Color grayColor = Color.decode("#999999");           //grayColor »ÒÉ«
+    public static Color warningColor = Color.decode("#FF3333");        //warningColor ¾¯¸æºìÉ«
+    public static Color backgroundColor = Color.decode("#eeeeee");     //backgroundColor ±³¾°É«
 
     public static Color getByPercentage(int per){
         if(per>100){per=100;}
@@ -31,15 +31,15 @@ public class ColorUtil {
 //        public static MainFrame instance = new MainFrame();
 //
 //        private MainFrame(){
-//            //è®¾ç½®çª—ä½“å¤§å°
+//            //ÉèÖÃ´°Ìå´óĞ¡
 //            this.setSize(500,450);
-//            //è®¾ç½®çª—å£æ ‡é¢˜
-//            this.setTitle("ä¸€æœ¬ç³Šæ¶‚è´¦");
-//            //è®¾ç½®åºŠæ¶çš„ä¸»é¢æ¿
+//            //ÉèÖÃ´°¿Ú±êÌâ
+//            this.setTitle("Ò»±¾ºıÍ¿ÕË");
+//            //ÉèÖÃ´²¼ÜµÄÖ÷Ãæ°å
 //            this.setContentPane(MainPanel.instance);
-//            //çª—ä½“å±…ä¸­æ˜¾ç¤º
+//            //´°Ìå¾ÓÖĞÏÔÊ¾
 //            this.setLocationRelativeTo(null);
-//            //è®¾ç½®çª—ä½“å¤§å°æ˜¯å¦å¯è°ƒ
+//            //ÉèÖÃ´°Ìå´óĞ¡ÊÇ·ñ¿Éµ÷
 //            this.setResizable(false);
 //            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        }

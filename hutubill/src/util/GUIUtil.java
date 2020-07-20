@@ -113,7 +113,7 @@ public class GUIUtil {
      */
     public static void useLNF(){
         try {
-            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+            UIManager.setLookAndFeel("com.birosoft.liquid.LiquidLookAndFeel");
         } catch (Exception e) {
             e.printStackTrace();
         }

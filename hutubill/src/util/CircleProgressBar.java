@@ -37,7 +37,7 @@ public class CircleProgressBar extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D graphics2d = (Graphics2D) g;
-        // å¼€å¯æŠ—é”¯é½¿
+        // ¿ªÆô¿¹¾â³İ
         graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         int x = 0;
         int y = 0;
@@ -63,7 +63,7 @@ public class CircleProgressBar extends JPanel {
         graphics2d.setColor(foregroundColor);
         graphics2d.drawArc(x, y, width, height, 90,
                 -(int) (360 * ((progress * 1.0) / (maximumProgress - minimumProgress))));
-        graphics2d.setFont(new Font("é»‘ä½“", Font.BOLD, fontSize));
+        graphics2d.setFont(new Font("ºÚÌå", Font.BOLD, fontSize));
         FontMetrics fontMetrics = graphics2d.getFontMetrics();
         int digitalWidth = fontMetrics.stringWidth(progressText);
         int digitalAscent = fontMetrics.getAscent();
