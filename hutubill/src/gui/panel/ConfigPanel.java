@@ -1,13 +1,14 @@
 package gui.panel;
 
 import gui.listener.ConfigListener;
+import service.Configservice;
 import util.ColorUtil;
 import util.GUIUtil;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ConfigPanel extends JPanel{
+public class ConfigPanel extends WorkingPanel{
     static {
         GUIUtil.useLNF();
     }
@@ -44,6 +45,22 @@ public class ConfigPanel extends JPanel{
 
         addListener();
     }
+
+    @Override
+    public void updateDate() {
+        Configservice cs = new Configservice();
+        //从数据库中获取配置信息
+        String budget = cs.getValueByKey(Configservice.budget);
+        String mysqlPath = cs.getValueByKey(Configservice.mysqlPath);
+        //将配置信息显示在界面
+        tfBudget.setText(budget);
+        tfMysql.setText(mysqlPath);
+
+        //输入框获取焦点
+        tfBudget.grabFocus();
+
+    }
+    @Override
     public void addListener(){
         ConfigListener c = new ConfigListener();
         bUpdate.addActionListener(c);

@@ -1,7 +1,9 @@
 package gui.panel;
 
 import entity.Category;
+import gui.listener.CategoryListener;
 import gui.model.CategoryTableModel;
+import service.Categoryservice;
 import util.ColorUtil;
 import util.GUIUtil;
 
@@ -50,11 +52,29 @@ public class CategroyPanel extends WorkingPanel{
 
     @Override
     public void updateDate() {
+        ctm.cs = new Categoryservice().getCategoryRecordNumber();
+        t.updateUI();
+        t.getSelectionModel().setSelectionInterval(0, 0);
+
+
+
+        //若当列表信息为0时 设置删除和编辑按钮不可用
+        if( 0 == ctm.cs.size()){
+            bEidt.setEnabled(false);
+            bDelete.setEnabled(false);
+        }else{
+            bEidt.setEnabled(true);
+            bDelete.setEnabled(true);
+        }
 
     }
 
     @Override
     public void addListener() {
+        CategoryListener listener = new CategoryListener();
+        bAdd.addActionListener(listener);
+        bEidt.addActionListener(listener);
+        bDelete.addActionListener(listener);
 
     }
 }

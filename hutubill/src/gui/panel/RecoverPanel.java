@@ -9,7 +9,7 @@ public class RecoverPanel extends WorkingPanel{
     static {
         GUIUtil.useLNF();
     }
-    private static RecoverPanel instance = new RecoverPanel();
+    public static RecoverPanel instance = new RecoverPanel();
     JButton bRecover = new JButton("»Ö¸´");
 
     public RecoverPanel() {

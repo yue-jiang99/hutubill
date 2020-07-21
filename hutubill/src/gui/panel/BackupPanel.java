@@ -9,7 +9,7 @@ public class BackupPanel extends WorkingPanel{
     static {
         GUIUtil.useLNF();
     }
-    private static BackupPanel instance = new BackupPanel();
+    public static BackupPanel instance = new BackupPanel();
     JButton bBackup = new JButton("±¸·Ý");
 
     public BackupPanel() {

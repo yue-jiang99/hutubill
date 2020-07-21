@@ -36,11 +36,16 @@ public class ConfigDAO {
         try(Connection conn = DBUtil.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)){
             ps.setString(1,config.getKey());
             ps.setString(2,config.getValue());
-            ps.execute();
-            ResultSet rs =ps.getGeneratedKeys();
-            if (rs.next()){
-                int id = rs.getInt(1);
-                config.setId(id);
+            /**
+             * 获取Config对象在数据库里面的id并赋值给Config中的id
+            * 尚不清楚用途
+            */
+            if(	ps.executeUpdate()>0){
+                ResultSet rs = ps.getGeneratedKeys();
+                if(rs.next()){
+                    int id = rs.getInt(1);
+                    config.setId(id);
+                }
             }
 
         }catch (SQLException e) {

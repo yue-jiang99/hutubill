@@ -55,10 +55,12 @@ public class CenterPanel extends JPanel {
         for (Component c : cs ){
             remove(c);
         }
-       if (p instanceof WorkingPanel){
 
-        }
         add(p);
+
+        if (p instanceof WorkingPanel){
+            ((WorkingPanel) p).updateDate();
+        }
         this.updateUI();
 
     }
