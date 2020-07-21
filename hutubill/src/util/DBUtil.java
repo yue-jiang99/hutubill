@@ -6,14 +6,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *  æ•°æ®åº“å·¥å…·ç±»
- *  1)æä¾›ä¸€ä¸ªæ•°æ®åº“è¿æ¥çš„æ–¹å¼
- *  2)å…³é—­è¿æ¥decçš„æ“ä½œåœ¨DAOå±‚å®ç°
+ *  Êı¾İ¿â¹¤¾ßÀà
+ *  1)Ìá¹©Ò»¸öÊı¾İ¿âÁ¬½ÓµÄ·½Ê½
+ *  2)¹Ø±ÕÁ¬½ÓdecµÄ²Ù×÷ÔÚDAO²ãÊµÏÖ
  */
 public class DBUtil {
-    public static final String driver = "com.mysql.jdbc.Driver";
-    static String setSSL = "flase";
-    static String ip = "localhost";
+
+    static String ip = "127.0.0.1";
     static int port = 3306;
     static String database = "hutubill";
     static String encoding = "UTF-8";
@@ -21,23 +20,23 @@ public class DBUtil {
     static String password = "admin";
 
     /**
-     * é™æ€ä»£ç å—æœªåŠ è½½
+     * ¾²Ì¬´úÂë¿éÎ´¼ÓÔØ
      */
     static {
         try {
-            Class.forName(driver);
+            Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            System.out.println("é©±åŠ¨åŠ è½½å¤±è´¥!");
+            System.out.println("Çı¶¯¼ÓÔØÊ§°Ü!");
         }
     }
     /**
-     * è¿”å›ä¸€ä¸ªè¿æ¥ è‹¥è¿æ¥åˆ›å»ºå¤±è´¥åˆ™è¿”å›ä¸€ä¸ªç©ºå€¼
+     * ·µ»ØÒ»¸öÁ¬½Ó ÈôÁ¬½Ó´´½¨Ê§°ÜÔò·µ»ØÒ»¸ö¿ÕÖµ
      * @return
      */
     public static Connection getConnection(){
         try {
-            String url = String.format("jdbc:mysql://%s:%d/%s?characterEncoding=%s&useSSL=%s", ip, port, database, encoding,setSSL);
+            String url = String.format("jdbc:mysql://%s:%d/%s?characterEncoding=%s", ip, port, database, encoding);
             return DriverManager.getConnection(url, loginName, password);
         } catch (SQLException e) {
             e.printStackTrace();

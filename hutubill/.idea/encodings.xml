@@ -12,7 +12,10 @@
     <file url="file://$PROJECT_DIR$/lib" charset="GBK" />
     <file url="file://$PROJECT_DIR$/lib/chart.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/lib/liquidlnf.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/CategoryDAO.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/gui/frame/MainFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/listener/ConfigListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/model/CategoryTableModel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/gui/panel/BackupPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/gui/panel/CategroyPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/gui/panel/ConfigPanel.java" charset="GBK" />
@@ -20,10 +23,13 @@
     <file url="file://$PROJECT_DIR$/src/gui/panel/RecordPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/gui/panel/RecoverPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/gui/panel/SpendPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/Categoryservice.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/Configservice.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/util/CenterPanel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/util/ChartUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/util/CircleProgressBar.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/util/ColorUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/DBUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/util/DateUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/util/GUIUtil.java" charset="UTF-8" />
   </component>

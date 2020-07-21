@@ -11,7 +11,7 @@ import java.util.List;
 public class CategoryDAO {
 
         /**
-         * 缁熻鎬绘暟
+         * 统计总数
          * @return
          */
         public int getTotal(){
@@ -30,7 +30,7 @@ public class CategoryDAO {
         }
 
         /**
-         * 澧炲姞
+         * 增加
          * @param  category
          */
         public void add(Category category){
@@ -50,7 +50,7 @@ public class CategoryDAO {
         }
 
         /**
-         * 鏇存柊
+         * 更新
          * @param category
          */
         public void update(Category category){
@@ -66,7 +66,7 @@ public class CategoryDAO {
         }
 
         /**
-         * 鍒犻櫎
+         * 删除
          * @param id
          */
         public void delete(int id){
@@ -79,7 +79,7 @@ public class CategoryDAO {
         }
 
         /**
-         * 鏍规嵁ID鑾峰彇瀵硅薄
+         * 根据ID获取对象
          * @param id
          * @return
          */
@@ -100,22 +100,22 @@ public class CategoryDAO {
         }
 
         /**
-         * 鏁翠綋鏌ヨ
+         * 整体查询
          * @return
          */
-        public List<Category> list(){
-            return list(0,Short.MAX_VALUE);
+        public List<Category> getCategory(){
+            return getCategory(0,Short.MAX_VALUE);
         }
         /**
-         * 鍒嗛〉鏌ヨ
+         * 分页查询
          * @param start
          * @param count
          * @return
          */
-        public List<Category> list(int start,int count){
+        public List<Category> getCategory(int start,int count){
             List<Category> categories = new ArrayList<Category>();
 
-            String sql = "select * feom category order by id desc limit ?,? ";
+            String sql = "select * from category order by id desc limit ?,? ";
             try(Connection conn = DBUtil.getConnection();PreparedStatement ps = conn.prepareStatement(sql)){
 
                 ps.setInt(1,start);
