@@ -1,14 +1,18 @@
 package gui.panel;
 
+import entity.Category;
+import gui.listener.RecordListener;
+import gui.model.CategoryComboBoxModel;
 import org.jdesktop.swingx.JXDatePicker;
+import service.Categoryservice;
 import util.ColorUtil;
 import util.GUIUtil;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.awt.*;
+import java.util.Date;
 
-public class RecordPanel extends JPanel{
+public class RecordPanel extends WorkingPanel{
     //背景
     static {
         GUIUtil.useLNF();
@@ -17,15 +21,16 @@ public class RecordPanel extends JPanel{
     public static RecordPanel instance = new RecordPanel();
 
 
-    private JLabel lSpend = new JLabel("花费");
-    private JLabel lCatrgory = new JLabel("分类");
-    private JLabel lComment = new JLabel("备注");
-    private JLabel lDate = new JLabel("日期");
+    public JLabel lSpend = new JLabel("花费");
+    public JLabel lCatrgory = new JLabel("分类");
+    public JLabel lComment = new JLabel("备注");
+    public JLabel lDate = new JLabel("日期");
 
-    private JTextField jt = new JTextField("0");
-    private JTextField jt1 = new JTextField("餐饮");
-    private JTextField jt2 = new JTextField("");
-    private JXDatePicker datePicker = new JXDatePicker();
+    public JTextField tfSpend = new JTextField("0");
+    public CategoryComboBoxModel cbModel = new CategoryComboBoxModel();
+    public JComboBox<Category> cbCategory = new JComboBox<Category>(cbModel);
+    public JTextField tfComment = new JTextField();
+    public JXDatePicker datePicker = new JXDatePicker(new Date());
 
     JButton bSubmit = new JButton("记一笔");
 
@@ -39,11 +44,11 @@ public class RecordPanel extends JPanel{
         pInput.setLayout(new GridLayout(4,2,gap,gap));
 
         pInput.add(lSpend);
-        pInput.add(jt);
+        pInput.add(tfSpend);
         pInput.add(lCatrgory);
-        pInput.add(jt1);
+        pInput.add(cbCategory);
         pInput.add(lComment);
-        pInput.add(jt2);
+        pInput.add(tfComment);
         pInput.add(lDate);
         pInput.add(datePicker);
 
@@ -53,6 +58,32 @@ public class RecordPanel extends JPanel{
         this.add(pInput,BorderLayout.NORTH);
         this.add(pSubmit,BorderLayout.CENTER);
 
+        addListener();
+
     }
 
+    @Override
+    public void updateDate() {
+        //重新赋值cbModel中的cs数组
+        cbModel.cs = new Categoryservice().getCategoryRecordNumber();
+        //重新渲染
+        cbCategory.updateUI();
+
+        //重置其他的控件
+        tfSpend.setText("");
+        tfComment.setText("");
+        if(0 != cbModel.getSize()){
+            cbCategory.setSelectedItem(0);
+        }
+
+        datePicker.setDate(new Date());
+    }
+
+    @Override
+    public void addListener() {
+        RecordListener listener = new RecordListener();
+
+        bSubmit.addActionListener( listener);
+
+    }
 }

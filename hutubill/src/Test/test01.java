@@ -14,24 +14,24 @@ public class test01 {
 
         GUIUtil.useLNF();
 
-        //é¢æ¿
+        //Ãæ°å
         JPanel p = new JPanel();
 
-        //ç»„ä»¶è¿›åº¦æ¡
+        //×é¼ş½ø¶ÈÌõ
         CircleProgressBar cpb = new CircleProgressBar();
         cpb.setBackgroundColor(ColorUtil.blueColor);
         cpb.setProgress(0);
 
-        //æŒ‰é’®
+        //°´Å¥
         JButton b = new JButton("start!");
 
-        //æ·»åŠ ç»„ä»¶
+        //Ìí¼Ó×é¼ş
         p.setLayout(new BorderLayout());
         p.add(cpb,BorderLayout.CENTER);
         p.add(b,BorderLayout.SOUTH);
-        //æ˜¾ç¤ºé¢ç‰ˆ
+        //ÏÔÊ¾Ãæ°æ
         GUIUtil.showPanel(p);
-        //ç»™æŒ‰é’®åŠ ç›‘å¬å™¨
+        //¸ø°´Å¥¼Ó¼àÌıÆ÷
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

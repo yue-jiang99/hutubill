@@ -36,10 +36,8 @@ public class ConfigDAO {
         try(Connection conn = DBUtil.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)){
             ps.setString(1,config.getKey());
             ps.setString(2,config.getValue());
-            /**
-             * 获取Config对象在数据库里面的id并赋值给Config中的id
-            * 尚不清楚用途
-            */
+
+
             if(	ps.executeUpdate()>0){
                 ResultSet rs = ps.getGeneratedKeys();
                 if(rs.next()){
@@ -58,7 +56,7 @@ public class ConfigDAO {
      * @param config
      */
     public void update(Config config){
-        String sql = "update config set key_ = ?,value = ?,where id = ?";
+        String sql = "update config set key_ = ?,value = ? where id = ?";
         try(Connection conn = DBUtil.getConnection();PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1,config.getKey());
             ps.setString(2,config.getValue());

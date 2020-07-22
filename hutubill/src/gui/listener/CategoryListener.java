@@ -12,23 +12,23 @@ public class CategoryListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         CategroyPanel p = CategroyPanel.instance;
-        JButton button = new JButton();
+        JButton button = (JButton) e.getSource();
         if (button == p.bAdd){
             String name = JOptionPane.showInputDialog(null);
             if (0 == name.length()){
-                JOptionPane.showMessageDialog(p,"åˆ†ç±»åä¸èƒ½ä¸ºç©º");
+                JOptionPane.showMessageDialog(p,"·ÖÀàÃû²»ÄÜÎª¿Õ");
                 return;
             }
             new Categoryservice().add(name);
         }
 
         if(button == p.bEidt){
-            //è·å–è¢«é€‰ä¸­çš„æ¶ˆè´¹ç±»åˆ«
+            //»ñÈ¡±»Ñ¡ÖĞµÄÏû·ÑÀà±ğ
             Category c = p.getSelectCategory();
             /*********************/
-            String name = JOptionPane.showInputDialog("ä¿®æ”¹åˆ†ç±»åç§°",c.getName());
+            String name = JOptionPane.showInputDialog("ĞŞ¸Ä·ÖÀàÃû³Æ",c.getName());
             if(0 == name.length()){
-                JOptionPane.showMessageDialog(p, "åˆ†ç±»åç§°ä¸èƒ½ä¸ºç©º");
+                JOptionPane.showMessageDialog(p, "·ÖÀàÃû³Æ²»ÄÜÎª¿Õ");
                 return;
             }
             new Categoryservice().update(c.getId(), name);
@@ -37,10 +37,10 @@ public class CategoryListener implements ActionListener {
         if (button == p.bDelete){
             Category c = p.getSelectCategory();
             if (0 != c.getRecordNumber()){
-                JOptionPane.showMessageDialog(p,"è¯¥æ¶ˆè´¹è®°å½•ä¸å¯ä»¥åˆ é™¤");
+                JOptionPane.showMessageDialog(p,"¸ÃÏû·Ñ¼ÇÂ¼²»¿ÉÒÔÉ¾³ı");
                 return;
             }
-            if (JOptionPane.OK_OPTION != JOptionPane.showConfirmDialog(p,"ç¡®è®¤è¦åˆ é™¤")){
+            if (JOptionPane.OK_OPTION != JOptionPane.showConfirmDialog(p,"È·ÈÏÒªÉ¾³ı")){
                 return;
             }
             new Categoryservice().delete(c.getId());

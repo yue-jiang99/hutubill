@@ -27,7 +27,7 @@ public class ConfigListener implements ActionListener {
         //获取mysql的安装路径
         String mysqlPath = cp.tfMysql.getText().trim();
         //若输入不为空,则进一步检查mysql安装目录是否正确
-        if (0 == mysqlPath.length()) {
+        if (0 != mysqlPath.length()) {
             File f = new File(mysqlPath,"bin/mysql.txt");
             if (!f.exists()){
                 JOptionPane.showMessageDialog(cp,"mysql安装路径不正确");

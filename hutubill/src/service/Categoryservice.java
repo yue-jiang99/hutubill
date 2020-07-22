@@ -54,6 +54,6 @@ public class Categoryservice {
      * @param id
      */
     public void delete(int id){
-        categoryDAO.delete(id);
+        categoryDAO.deleteById(id);
     }
 }

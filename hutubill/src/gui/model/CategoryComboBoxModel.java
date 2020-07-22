@@ -13,8 +13,8 @@ public class CategoryComboBoxModel implements ComboBoxModel<Category> {
 
     public CategoryComboBoxModel() {
         /**
-         * é»˜è®¤é€‰æ‹©ç¬¬ä¸€ä¸ª
-         * å³æ•°æ®åº“è®°å½•é‡Œé¢çš„æœ€åä¸€ä¸ª
+         * Ä¬ÈÏÑ¡ÔñµÚÒ»¸ö
+         * ¼´Êı¾İ¿â¼ÇÂ¼ÀïÃæµÄ×îºóÒ»¸ö
          */
         if(!cs.isEmpty()){
             c = cs.get(0);

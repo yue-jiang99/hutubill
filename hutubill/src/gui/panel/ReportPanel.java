@@ -1,13 +1,15 @@
 package gui.panel;
 
 import entity.Record;
+import service.Reportservice;
 import util.ChartUtil;
 import util.GUIUtil;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
-public class ReportPanel extends JPanel{
+public class ReportPanel extends WorkingPanel{
     static {
         GUIUtil.useLNF();
     }
@@ -16,13 +18,29 @@ public class ReportPanel extends JPanel{
 
     public ReportPanel() {
         this.setLayout(new BorderLayout());
-        ImageIcon i = new ImageIcon("home.png");
-        l.setIcon(i);
-        l.setBounds(50,50,i.getIconWidth(),i.getIconHeight());
+        List<Record> rs = new Reportservice().listThisMonthRecords();
+        Image i = ChartUtil.getImage(rs, 400, 300);
+        ImageIcon icon = new ImageIcon(i);
+        l.setIcon(icon);
         this.add(l);
+        addListener();
     }
 
     public static void main(String[] args) {
         GUIUtil.showPanel(ReportPanel.instance);
+    }
+
+    @Override
+    public void updateDate() {
+        List<Record> rs = new Reportservice().listThisMonthRecords();
+        Image i = ChartUtil.getImage(rs, 350, 250);
+        ImageIcon icon = new ImageIcon(i);
+        l.setIcon(icon);
+
+    }
+
+    @Override
+    public void addListener() {
+
     }
 }

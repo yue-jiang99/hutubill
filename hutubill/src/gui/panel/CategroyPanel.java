@@ -22,7 +22,7 @@ public class CategroyPanel extends WorkingPanel{
     String colunmNames[] = new String[]{"分类名称","消费次数"};
 
     public CategoryTableModel ctm = new CategoryTableModel();
-    public JTable t = new JTable();
+    public JTable t = new JTable(ctm);
 
     private CategroyPanel(){
 
@@ -36,8 +36,9 @@ public class CategroyPanel extends WorkingPanel{
         pSubmit.add(bDelete);
 
         this.setLayout(new BorderLayout());
-        this.add(sp,BorderLayout.CENTER);
         this.add(pSubmit,BorderLayout.SOUTH);
+        this.add(sp,BorderLayout.CENTER);
+
 
         addListener();
     }
